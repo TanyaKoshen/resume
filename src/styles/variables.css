@@ -1,6 +1,6 @@
 :root{
-    --font-color-sidebar: #3f3a3a;
-    --font-color: #1f1d1d;
+    --font-color: #524c4c;
+    --font-color-sidebar: #353131;
     --link-font-color: #2c98f0;
     --link-font-color-active: #a25454;
     --font-size-l: 20px;
@@ -17,6 +17,7 @@
     --header-height: 50px;
     --sidebar-width: 320px;
     --bg-header: #1d1919;
+
 
 }
 

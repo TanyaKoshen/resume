@@ -1,6 +1,10 @@
+
+
 .icon-wrapper{
     display: grid;
     grid-template-columns: 60px auto ;
+    align-items: center;
+    margin: 20px;
 }
 
 .icon{
@@ -8,3 +12,10 @@
     height: 30px;
     color: var(--link-font-color)
 }
+
+.text{
+    font-size: var(--font-size-sm);
+    text-transform: lowercase;
+}
+
+

@@ -1,3 +1,33 @@
-.skills{
-
+.skills-container{
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - var(--header-height));
 }
+.label{
+    width: 40px;
+    height: 40px;
+}
+
+input[type="range"] {
+    width: 50%;
+    height: 3px;
+    -webkit-appearance: none;
+    background: gray;
+    outline: none;
+    overflow: visible;
+    border-radius: 10px;
+}
+input[type="range"]::-webkit-slider-thumb {
+    background-color: gray;
+    width: 10px;
+    height: 10px;
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+
+

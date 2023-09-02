@@ -6,7 +6,7 @@ import cl from './Contact.module.css'
 
 const icons = [
     {
-        text: 'my linkedIn',
+        text: 'LinkedIn',
         type: 'linkedIn',
         href: 'https://www.linkedin.com/in/tatiana-koshenskaya/',
         icon: <GrLinkedin/>
@@ -41,10 +41,11 @@ const Contact = () => {
                 <div key={text}  className={cl['icon-wrapper']}>
                     <div>
                         {React.cloneElement(icon, {className: cl.icon})}
-
                     </div>
-                    <div >{typeMapping(type, href, text)}</div>
-                </div>
+                    <div className={cl['text']}>
+                        {typeMapping(type, href, text)}
+                    </div>
+                </div >
             )}
         </div>
     );

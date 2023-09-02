@@ -14,14 +14,16 @@ const Home = () => {
         }
     };
     return (
-        <div >
-            {user && <Button onClick={()=>console.log('click')}>Create you CV</Button>}
+        <div className={cl.home}  >
+            <div className={cl['btn-wrapper']}>
+                {user && <Button onClick={()=>console.log('click')}>Create your CV</Button>}
+                <Button onClick={handleDownloadClick}>Download CV</Button>
+            </div>
 
-            <Button onClick={handleDownloadClick}>Download CV</Button>
-            <a
+            <a className={cl['a-link']}
                 ref={downloadLinkRef}
                 href=''
-                download={'public/assets/TatianaPeretyatkoResume__.pdf'}
+                download={'../../shared/assets/TatianaPeretyatkoResume__.pdf'}
             ></a>
         </div>
     );
