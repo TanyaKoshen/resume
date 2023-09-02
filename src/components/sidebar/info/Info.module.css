@@ -1,0 +1,14 @@
+.text-area{
+    text-align: center;
+    color: var(--font-color-sidebar);
+    line-height: var(--font-line-m);
+    margin-bottom: 60px;
+}
+
+
+
+.text-area h5:nth-child(2){
+    color: var(--link-font-color);
+}
+
+

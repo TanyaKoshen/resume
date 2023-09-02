@@ -1,0 +1,10 @@
+.icon-wrapper{
+    display: grid;
+    grid-template-columns: 60px auto ;
+}
+
+.icon{
+    width: 30px;
+    height: 30px;
+    color: var(--link-font-color)
+}
