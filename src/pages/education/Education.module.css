@@ -1,0 +1,21 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.logo-container{
+    position: relative;
+    margin: 40px;
+    background: var(--bg-color-sidebar);
+
+}
+
+.logo{
+    position: absolute;
+    object-fit: cover;
+    margin-top: 40px;
+    width: 100px;
+    height: auto;
+    right: 2%;
+    border: 1px solid var(--bg-header);
+}

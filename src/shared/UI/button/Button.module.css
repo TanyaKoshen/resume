@@ -1,0 +1,10 @@
+.btn{
+    padding: 10px;
+    border: 1px solid var(--font-color);
+    color: var(--font-color);
+    margin: 10px 0px;
+    font-size: var(--font-line-sm);
+    background: transparent;
+    cursor: pointer;
+    text-transform: uppercase;
+}

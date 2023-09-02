@@ -1,0 +1,14 @@
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../../shared/assets/IMG_0533.jpeg');
+}
+
+a {
+    display: none;
+}
+
+.image{
+
+}

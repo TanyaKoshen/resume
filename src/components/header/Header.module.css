@@ -1,0 +1,25 @@
+.header{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: var(--header-height);
+    width: 100vw;
+    background: var(--bg-header);
+    text-transform: uppercase;
+}
+
+.header-item{
+   margin: 10px;
+    text-decoration: none;
+    color: var(--link-font-color);
+    padding: 5px;
+    border-bottom: 1px solid transparent;
+}
+.active{
+    color: var(--link-font-color-active);
+    border-bottom: 1px solid var(--link-font-color);
+}
+
+.header-item:hover{
+    border-bottom: 1px solid var(--link-font-color);
+}

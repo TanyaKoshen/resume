@@ -1,0 +1,23 @@
+:root{
+    --font-color-sidebar: #3f3a3a;
+    --font-color: #1f1d1d;
+    --link-font-color: #2c98f0;
+    --link-font-color-active: #a25454;
+    --font-size-l: 20px;
+    --font-size-m: 16px;
+    --font-size-sm: 12px;
+    --bg-color: rgb(242, 243, 247);
+    --bg-color-sidebar: #d9d3d3;
+    --font-line-l: 28px;
+    --font-line-m: 24px;
+    --font-line-sm: 20px;
+    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    --header-height: 50px;
+    --sidebar-width: 320px;
+    --bg-header: #1d1919;
+
+}
+
+
