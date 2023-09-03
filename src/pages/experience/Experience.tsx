@@ -1,4 +1,6 @@
 import React from 'react';
+import cl from './Experince.module.css'
+
 const workExperience = [
     {
         workPlace: 'DigitalVertex Enterprises',
@@ -14,10 +16,9 @@ const workExperience = [
 
 const Experience = () => {
     return (
-        <div>
-            <div>
-                Work Experience
-            </div>
+        <div className={cl['experience-container']}>
+            <h3>Experience</h3>
+            <h2>Work Experience</h2>
             {workExperience.map(el=>
             <div key={el.workPlace}>
                 <h4>{el.workPlace}</h4>

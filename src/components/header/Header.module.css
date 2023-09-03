@@ -8,12 +8,14 @@
     text-transform: uppercase;
 }
 
+
 .header-item{
    margin: 10px;
     text-decoration: none;
     color: var(--link-font-color);
     padding: 5px;
     border-bottom: 1px solid transparent;
+    cursor: pointer;
 }
 .active{
     color: var(--link-font-color-active);

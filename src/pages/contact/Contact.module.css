@@ -1,21 +1,32 @@
-
-
-.icon-wrapper{
-    display: grid;
-    grid-template-columns: 60px auto ;
-    align-items: center;
-    margin: 20px;
+.contact-container{
+    display: flex;
+    flex-direction: column;
+    padding: 30px 50px;
 }
 
+.contact{
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.icon-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    width: 100px;
+    height: 100px;
+    margin-right: 30px;
+    border-radius: 50%;
+    border: 1px solid var(--bg-color-sidebar);
+}
 .icon{
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     color: var(--link-font-color)
 }
 
-.text{
-    font-size: var(--font-size-sm);
-    text-transform: lowercase;
-}
+
 
 

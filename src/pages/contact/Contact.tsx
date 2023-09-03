@@ -36,17 +36,24 @@ const Contact = () => {
         )
     }
     return (
-        <div>
-            {icons.map(({text, type, href, icon}) =>
-                <div key={text}  className={cl['icon-wrapper']}>
-                    <div>
-                        {React.cloneElement(icon, {className: cl.icon})}
-                    </div>
-                    <div className={cl['text']}>
-                        {typeMapping(type, href, text)}
-                    </div>
-                </div >
-            )}
+        <div >
+            <h3>contact</h3>
+            <h2>get in touch</h2>
+            <div className={cl['contact-container']}>
+                {icons.map(({text, type, href, icon}) =>
+                    <div key={text}
+                    className={cl.contact}
+                    >
+                        <div className={cl['icon-container']}>
+                            {React.cloneElement(icon, {className: cl.icon})}
+                        </div>
+                        <div>
+                            {typeMapping(type, href, text)}
+                        </div>
+                    </div >
+                )}
+            </div>
+
         </div>
     );
 };

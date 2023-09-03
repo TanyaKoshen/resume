@@ -21,14 +21,13 @@
     overflow: hidden;
     border-radius: 50%;
     margin: 40px;
-
 }
 .image{
     position: absolute;
     object-fit: cover;
     width: 150px;
     height: auto;
-    right: 2%;
+
 }
 
 

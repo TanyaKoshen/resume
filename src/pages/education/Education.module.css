@@ -1,22 +1,32 @@
-.container{
+.ed-container{
+    display: flex;
+    flex-direction: column;
+    padding: 30px 50px;
+}
+.education{
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.logo-container{
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-
-}
-.logo-container{
-    position: relative;
-    margin: 40px;
-    background: var(--bg-color-sidebar);
-
-}
-
-.logo{
-    position: absolute;
-    object-fit: cover;
-    margin-top: 40px;
+    justify-content: center;
+    background: white;
     width: 100px;
-    height: auto;
-    right: 2%;
-    border: 1px solid var(--bg-header);
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid var(--bg-color-sidebar);
+    overflow: hidden;
+}
+.logo{
+    width: 60px;
+    height: 60px;
+    color: var(--link-font-color);
+
+}
+.info-container {
+    display: flex;
+    flex-direction: column;
+    color: var(--link-font-color)
 }

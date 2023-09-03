@@ -1,10 +1,19 @@
 .btn{
     padding: 10px;
-    border: 1px solid var(--font-color-sidebar);
-    color: var(--font-color-sidebar);
-    margin: 10px 0;
-    font-size: var(--font-line-sm);
+    border: 1px solid var(--font-color);
+    border-radius: 5px;
+    color: var(--font-color);
+    font-size: var(--font-size-sm);
     background: transparent;
     cursor: pointer;
     text-transform: uppercase;
+}
+
+.btn:hover{
+    color: var(--link-font-color);
+}
+
+.custom-button:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }

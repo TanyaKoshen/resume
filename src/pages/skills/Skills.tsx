@@ -3,8 +3,8 @@ import cl from './Skills.module.css'
 import {RiJavascriptLine} from "react-icons/ri";
 import {BiLogoTypescript} from "react-icons/bi";
 import {FaReact} from "react-icons/fa";
-import {SiMongodb} from "react-icons/si";
-import {GrNode} from "react-icons/gr";
+import { SiMongodb} from "react-icons/si";
+import {GrGraphQl, GrNode} from "react-icons/gr";
 import {SiExpress} from "react-icons/si";
 import {BsFiletypeCss} from "react-icons/bs";
 import {AiFillHtml5} from "react-icons/ai"
@@ -61,12 +61,18 @@ const Skills = () => {
             color: 'darkred',
             label: <AiFillHtml5/>
         },
+        {
+            skill: 'Apollo GraphQL',
+            range: 85,
+            color: 'rgb(205,56,205)',
+            label: <GrGraphQl/>
+        },
     ]
 
     return (
         <div className={cl['skills-container']}>
-
-            <h4>Skills</h4>
+            <h3>Skills</h3>
+            <h2>Skills</h2>
             <p>
                 I excel in JavaScript, the cornerstone of modern web development.
 
@@ -80,26 +86,27 @@ const Skills = () => {
 
                 My stack is always evolving, and I'm dedicated to learning beyond my work environment.
             </p>
-            {
-                skills.map(({skill, range, color, label}) =>
-                    <div>
+            <div className={cl['skills-columns']}>
+                {skills.map(({skill, range, color, label}) =>
+                    <div className={cl['skills-label-container']}>
                         <div style={{color: color}}
-                        key={skill}
+                             className={cl.skills}
+                             key={skill}
                         >
                             {React.cloneElement(label, {className: cl.label})}
                         </div>
-                        <input
-                            type="range"
-                            value={range}
-                            name={skill}
-                            style={{backgroundColor: color}}
-                            disabled
-                        />
-
+                        <div className={cl.skills}>
+                            <input
+                                type="range"
+                                value={range}
+                                name={skill}
+                                style={{backgroundColor: color}}
+                                disabled
+                            />
+                        </div>
                     </div>
-                )
-            }
-
+                )}
+            </div>
         </div>
     );
 };
