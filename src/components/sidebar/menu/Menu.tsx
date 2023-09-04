@@ -19,10 +19,8 @@ interface IMenuProps {
 }
 
 const Menu = ({className}: IMenuProps) => {
-
     const [active, setActive] = useState('')
     return (
-
         <div className={className}>
             <div className={cl['image-container']} >
                 <img className={cl.image} src={profilePic} alt="profile picture"/>

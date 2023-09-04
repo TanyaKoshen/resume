@@ -8,6 +8,8 @@ import Skills from "../../pages/skills/Skills";
 import Education from "../../pages/education/Education";
 import Experience from "../../pages/experience/Experience";
 import Contact from "../../pages/contact/Contact";
+import LoginForm from "../../pages/login/LoginForm";
+import Scoreboard from "../../pages/score/board/Scoreboard";
 
 const AppRouter = () => {
     const routes = [
@@ -17,6 +19,7 @@ const AppRouter = () => {
         {path: 'education', id: nanoid(), element: <Education/>},
         {path: 'experience', id: nanoid(), element: <Experience/>},
         {path: 'contact', id: nanoid(), element: <Contact/>},
+        {path: 'score', id: nanoid(), element:<Scoreboard/>}
     ]
     return (
         <Routes>
@@ -25,6 +28,8 @@ const AppRouter = () => {
                     <Route  path={el.path} element={el.element}/>)}
             </Route>
             <Route path='*' element={<Navigate to='/' />} />
+            <Route  path={'/login'} element={<LoginForm/>}/>
+
         </Routes>
     );
 };

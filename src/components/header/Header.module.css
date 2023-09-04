@@ -10,16 +10,22 @@
 
 
 .header-item{
-   margin: 10px;
+    margin: 10px 5px;
     text-decoration: none;
     color: var(--link-font-color);
     padding: 5px;
     border-bottom: 1px solid transparent;
     cursor: pointer;
+    font-size: var(--font-size-sm);
 }
-.active{
-    color: var(--link-font-color-active);
-    border-bottom: 1px solid var(--link-font-color);
+
+.score-link {
+    margin: 30px;
+    text-decoration: none;
+    padding: 5px;
+    cursor: pointer;
+    font-size: var(--font-size-m);
+    color: var(--bg-color);
 }
 
 .header-item:hover{
