@@ -1,0 +1,25 @@
+.btn{
+    width: 130px;
+    padding: 10px;
+    margin: 10px;
+    text-transform: uppercase;
+    font-size: var(--font-size-sm);
+    background: var(--bg-color);
+    border: 1px solid var(--font-color);
+    border-radius: 5px;
+    color: var(--font-color-sidebar);
+    cursor: pointer;
+}
+
+.btn.disabled{
+    border: 1px solid var(--bg-color-sidebar);
+    color: var(--bg-color-sidebar);
+}
+
+.btn.clicked{
+    background: var(--bg-color-sidebar);
+}
+
+.btn-container{
+    text-align: center;
+}

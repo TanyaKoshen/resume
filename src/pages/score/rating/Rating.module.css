@@ -1,0 +1,18 @@
+.rating-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--font-size-m)
+}
+
+.inp{
+    display: none;
+}
+
+.rating{
+    cursor: pointer;
+}
+.rating-given{
+    color: var(--link-font-color)
+}
+
