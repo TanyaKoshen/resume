@@ -1,9 +1,10 @@
 .link{
     text-decoration: none;
     color: var(--font-color-sidebar);
-    padding: 5px;
-    margin-bottom: 10px;
+    padding: 3px;
+    margin-bottom: 15px;
     border-bottom: 1px solid transparent;
+    font-size: var(--font-size-sm);
 }
 .active{
     color: var(--link-font-color);

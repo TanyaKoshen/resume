@@ -4,7 +4,7 @@
   margin: 0;
   padding:0;
   box-sizing: border-box;
-  max-width: 1400px;
+
 }
 body{
   font-family:  var(--font-family);
@@ -20,7 +20,7 @@ p{
   color: var(--font-color);
   line-height: 2;
   text-transform: none;
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-m);
 }
 
 h2{
@@ -31,7 +31,6 @@ h2{
 
 h3{
   padding: 30px 50px;
-  font-size: var(--font-size-m) ;
   color: var(--bg-color-sidebar);
   line-height: 1;
 }
