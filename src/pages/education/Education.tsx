@@ -37,13 +37,9 @@ const Education = () => {
                                 className={cl.logo}/>
                         </div>
                         <div className={cl['info-container']}>
-
                                 <h4>{el.name}</h4>
-
                                 <h5>{el.degree} {el.major}</h5>
-
                         </div>
-
                     </div>
                 )}
             </div>

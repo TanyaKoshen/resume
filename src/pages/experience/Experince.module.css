@@ -3,7 +3,12 @@
     flex-direction: column;
 }
 
-h4{
+.text-area{
+    display: flex;
+    gap: 10px;
+    font-size: var(--font-size-sm);
     color: var(--font-color);
+    padding: 10px 50px;
+
 }
 
