@@ -3,9 +3,9 @@
     justify-content: end;
     align-items: center;
     height: var(--header-height);
-    width: 100vw;
     background: var(--bg-header);
     text-transform: uppercase;
+    min-width: 100vw;
 }
 
 
