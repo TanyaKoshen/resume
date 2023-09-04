@@ -16,7 +16,7 @@
 }
 
 .outlet {
-    /*flex-grow: 1;*/
+    flex-grow: 1;
     text-transform: uppercase;
     color: var(--bg-color-sidebar);
     height: calc(100vh - var(--header-height));

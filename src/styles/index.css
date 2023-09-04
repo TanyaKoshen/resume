@@ -58,3 +58,7 @@ a:hover{
   text-decoration: none;
 }
 
+span{
+  color: var(--font-color);
+  font-size: var(--font-size-sm);
+}

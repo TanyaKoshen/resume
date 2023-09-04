@@ -25,7 +25,11 @@ const AppRouter = () => {
         <Routes>
             <Route path='/' element={<Layout/>}>
                 {routes.map(el =>
-                    <Route  path={el.path} element={el.element}/>)}
+                    <Route
+                        path={el.path}
+                        element={el.element}
+                        key={el.id}
+                    />)}
             </Route>
             <Route path='*' element={<Navigate to='/' />} />
             <Route  path={'/login'} element={<LoginForm/>}/>

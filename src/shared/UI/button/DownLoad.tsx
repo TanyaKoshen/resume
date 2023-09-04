@@ -1,12 +1,12 @@
 import React from 'react';
-import cl from './Button.module.css';
+import cl from './Download.module.css';
 
 interface IButtonProps{
     children: string | React.ReactNode;
     onClick: ()=>void;
 }
 
-const Button = ({children, ...props}: IButtonProps) => {
+const DownLoad = ({children, ...props}: IButtonProps) => {
     return (
         <button {...props} className={cl.btn}>
             {children}
@@ -14,4 +14,4 @@ const Button = ({children, ...props}: IButtonProps) => {
     );
 };
 
-export default Button;
+export default DownLoad;

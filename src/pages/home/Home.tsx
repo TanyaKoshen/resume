@@ -1,5 +1,5 @@
 import React, {useRef, useState} from 'react';
-import Button from "../../shared/UI/button/Button";
+import DownLoad from "../../shared/UI/button/DownLoad";
 import cl from './Home.module.css'
 import {BsDownload} from "react-icons/bs";
 
@@ -17,10 +17,10 @@ const Home = () => {
         <div className={cl.home}>
             <div className={cl['btn-link-container']}>
                 <div>
-                    {user && <Button onClick={()=>console.log('click')}>Create your CV</Button>}
-                    <Button onClick={handleDownloadClick}>
+                    {user && <DownLoad onClick={()=>console.log('click')}>Create your CV</DownLoad>}
+                    <DownLoad onClick={handleDownloadClick}>
                         <BsDownload/>{' '}Download CV
-                    </Button>
+                    </DownLoad>
                 </div>
 
                 <a className={cl['a-link']}

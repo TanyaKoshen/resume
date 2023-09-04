@@ -5,4 +5,5 @@ export interface ICategory{
     description: string;
     score: number;
     comments: string;
+    average: number
 }
