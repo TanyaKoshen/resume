@@ -1,0 +1,10 @@
+.card-container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 10px 50px;
+    height: 50px;
+    width: calc(90vw - var(--sidebar-width));
+    border: 1px solid var(--bg-color-sidebar);
+    border-radius: 10px;
+}

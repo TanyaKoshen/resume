@@ -1,7 +1,7 @@
 import React from 'react';
 import {nanoid} from "nanoid";
 import Scorecard from "../card/Scorecard";
-import {ICategory} from "../model";
+import cl from './Scoreboard.module.css'
 
 const Scoreboard = () => {
 
@@ -10,55 +10,61 @@ const Scoreboard = () => {
             id: nanoid(),
             metric: 'usability',
             description: '',
-            score: null,
+            score: 0,
             comments: '',
         },
         {
             id: nanoid(),
             metric: 'visual design',
             description: '',
-            score: null,
+            score: 0,
             comments: ''
         },
         {
             id: nanoid(),
             metric: 'content',
             description: '',
-            score:  null,
+            score: 0,
             comments: ''
         },
         {
             id: nanoid(),
             metric: 'responsive web design',
             description: '',
-            score:  null,
+            score: 0,
             comments: ''
         },
         {
             id: nanoid(),
             metric: 'browser compatibility',
             description: '',
-            score:  null,
+            score: 0,
             comments: ''
         },
         {
             id: nanoid(),
             metric: 'app performance',
             description: '',
-            score:  null,
+            score: 0,
             comments: ''
         },
-
-
     ]
+
     return (
-        <div>
-            {categories.map( category =>
-            <div>
-                <Scorecard category={category}/>
+        <div  >
+            <h4>Your feedback is appreciated!</h4>
+            <div className={cl['board-container']}>
+                {categories.map(category =>
+                    <div
+
+                        key={category.id}>
+                        <Scorecard category={category}
+                        />
+                    </div>
+                )}
             </div>
-            )}
         </div>
+
     );
 };
 
