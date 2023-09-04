@@ -1,25 +1,24 @@
-.layout{
-  display: flex;
+.layout {
+    display: flex;
 }
 
-.menu{
+.menu {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     width: var(--sidebar-width);
-    height: calc(100vh - var(--header-height));
-    flex-shrink: 0;
+    flex-shrink:0;
     background: var(--bg-color-sidebar);
     text-transform: uppercase;
+    color: var(--bg-color-sidebar);
+
 }
 
-.outlet{
-    flex-grow:1;
-    align-items: center;
-    justify-content: center;
+.outlet {
+    flex-grow: 1;
     text-transform: uppercase;
-    color:var(--font-color);
+    color: var(--bg-color-sidebar);
+    height: calc(100vh - var(--header-height));
 }
-
 

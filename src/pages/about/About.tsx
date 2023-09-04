@@ -4,8 +4,8 @@ import cl from './About.module.css'
 const About = () => {
     return (
         <div className={cl.about}>
-
-            <h3>about me</h3>
+            <h3>about</h3>
+            <h2>who am I?</h2>
             <p>
                 I'm a web developer who's passionate about crafting digital experiences that boost company profits and make life easier for people.
 

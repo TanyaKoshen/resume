@@ -2,7 +2,7 @@ import React from 'react';
 import cl from './Button.module.css';
 
 interface IButtonProps{
-    children: string;
+    children: string | React.ReactNode;
     onClick: ()=>void;
 }
 
