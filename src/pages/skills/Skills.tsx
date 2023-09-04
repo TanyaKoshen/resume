@@ -3,7 +3,7 @@ import cl from './Skills.module.css'
 import {RiJavascriptLine} from "react-icons/ri";
 import {BiLogoTypescript} from "react-icons/bi";
 import {FaReact} from "react-icons/fa";
-import { SiMongodb} from "react-icons/si";
+import {SiMongodb} from "react-icons/si";
 import {GrGraphQl, GrNode} from "react-icons/gr";
 import {SiExpress} from "react-icons/si";
 import {BsFiletypeCss} from "react-icons/bs";
@@ -96,26 +96,30 @@ const Skills = () => {
 
                 My stack is always evolving, and I'm dedicated to learning beyond my work environment.
             </p>
-            <div className={cl['skills-columns']}>
-                {skills.map(({id, skill, range, color, label}) =>
-                    <div
-                        key={id}
-                        className={cl['skills-label-container']}>
-                        <div style={{color: color}}
-                             className={cl.skills}>
-                            {React.cloneElement(label, {className: cl.label})}
+            <div className={cl['skills-grid-container']}>
+                <div className={cl['skills-grid']}>
+                    {skills.map(({id, skill, range, color, label}) =>
+                        <div key={id} className={cl['skills-cell']}>
+
+                            <div style={{color: color}} className={cl.skills}>
+                                    {React.cloneElement(label, {className: cl.label})}
+                                    <div className={cl.tooltip}>{skill}</div>
+                            </div>
+
+                            <div className={cl.skills}>
+                                <div>{range}%</div>
+                                <input
+                                    type="range"
+                                    value={range}
+                                    name={skill}
+                                    style={{backgroundColor: color}}
+                                    disabled
+                                />
+
+                            </div>
                         </div>
-                        <div className={cl.skills}>
-                            <input
-                                type="range"
-                                value={range}
-                                name={skill}
-                                style={{backgroundColor: color}}
-                                disabled
-                            />
-                        </div>
-                    </div>
-                )}
+                    )}
+                </div>
             </div>
         </div>
     );

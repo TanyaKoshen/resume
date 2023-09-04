@@ -3,28 +3,53 @@
     flex-direction: column;
 }
 
-.skills-columns {
+.skills-grid-container{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 50px 50px;
-    gap:10px
+    align-items: center;
+    justify-content: center;
+}
+.skills-grid {
+    display: grid;
+    margin: 50px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    justify-content: center;
 }
 
-.skills-label-container{
+.skills-cell{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap:10px
 }
 
 .skills{
     display: flex;
     flex-direction: column;
+
 }
+
 .label{
     width: 40px;
     height: 40px;
+}
+
+.tooltip {
+    position: absolute;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 4px;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+
+.skills:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.3s;
 }
 
 input[type="range"] {
