@@ -1,8 +1,8 @@
 import React from 'react';
 import {Outlet} from 'react-router-dom';
-import Menu from "../components/sidebar/menu/Menu";
+import Menu from "../sidebar/menu/Menu";
 import cl from './Layout.module.css'
-import Header from "../components/header/Header";
+import Header from "../header/Header";
 
 const Layout = () => {
 

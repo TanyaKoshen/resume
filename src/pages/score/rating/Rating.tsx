@@ -19,7 +19,7 @@ const Rating = ({initialRating,handleRatingUpdate ,categoryId}:IRatingProps ) =>
     return (
         <div className={cl['rating-container']}>
             {[...Array(5)].map((el,i)=> {
-               const rating = i+1;
+               const rating = i + 1;
                const inputId = rating + categoryId
                return (
                    <label htmlFor={inputId} key={i}>

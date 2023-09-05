@@ -20,6 +20,7 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
 .skills{
@@ -54,22 +55,23 @@
 
 input[type="range"] {
     width: 100%;
-    height: 3px;
+    height: 10px;
     -webkit-appearance: none;
-    background: gray;
+    /*background: gray;*/
     outline: none;
-    overflow: visible;
+    /*overflow: hidden;*/
     border-radius: 10px;
 }
 input[type="range"]::-webkit-slider-thumb {
-    background-color: gray;
-    width: 10px;
-    height: 10px;
+    background-color: white;
+    width: 7px;
+    height: 7px;
     -webkit-appearance: none;
     appearance: none;
     border: none;
     border-radius: 50%;
     cursor: pointer;
+    /*box-shadow: 200px 0 0 15px #d4e0eb;*/
 }
 
 
