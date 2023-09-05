@@ -3,17 +3,16 @@ import { FaStar } from 'react-icons/fa';
 import cl from './Rating.module.css'
 
 interface IRatingProps{
-    initialRating?: number;
+  //  initialRating?: number;
     handleRatingUpdate: (id: string, rating: number)=> void;
     categoryId: string
 }
 
-const Rating = ({initialRating,handleRatingUpdate ,categoryId}:IRatingProps ) => {
-    const [score, setScore] = useState(initialRating || 0);
+const Rating = ({handleRatingUpdate ,categoryId}:IRatingProps ) => {
+    const [score, setScore] = useState( 0);
 
     const handleClick = (rating: number) => {
-
-        handleRatingUpdate(categoryId,rating );
+        handleRatingUpdate(categoryId,rating);
         setScore(rating)
     }
     return (

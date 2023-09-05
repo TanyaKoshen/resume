@@ -11,7 +11,7 @@ const workExperience = [
     {
         workPlace: 'Rhenne Trade',
         description: 'I specialized in crafting responsive user interfaces with React and CSS libraries like Bootstrap, enhancing user engagement. My contributions also extended to codebase improvements through Redux, fostering code maintainability and efficient state management. Active involvement in code reviews and constructive feedback to teammates boosted overall code quality. I prioritized unit testing for new features, simplifying debugging and ensuring code reliability. Additionally, I maintained comprehensive documentation, including user guides and technical specs, to facilitate user and developer understanding.',
-        date: '2018-2020',
+        date: '2018 - 2020',
         location: 'Houston, TX'
     },
 ]
