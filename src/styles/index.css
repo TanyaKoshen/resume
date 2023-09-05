@@ -20,7 +20,7 @@ p{
   color: var(--font-color);
   line-height: 2;
   text-transform: none;
-  font-size: var(--font-size-m);
+  font-size: var(--font-size-sm);
 }
 
 h2{

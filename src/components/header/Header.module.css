@@ -1,4 +1,4 @@
-.header{
+.header-container{
     display: flex;
     justify-content: end;
     align-items: center;
@@ -8,6 +8,14 @@
     min-width: 100vw;
 }
 
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color:var(--bg-color-sidebar);
+    font-size: var(--font-size-sm);
+    margin-right: 30px;
+}
 
 .header-item{
     margin: 10px 5px;
@@ -21,10 +29,10 @@
 
 .score-link {
     margin: 30px;
+    padding-bottom: 50px;
     text-decoration: none;
-    padding: 5px;
     cursor: pointer;
-    font-size: var(--font-size-m);
+    font-size: var(--font-size-sm);
     color: var(--bg-color);
 }
 

@@ -20,7 +20,7 @@
     border: 1px solid var(--bg-color-sidebar);
     flex-shrink: 0;
     overflow: hidden;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: -1px 3px 6px rgba(0, 0, 0, 0.3);
 }
 .logo{
     width: 60px;
