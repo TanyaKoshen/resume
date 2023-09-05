@@ -7,18 +7,21 @@ import Rating from "../rating/Rating";
 interface IScorecardProps{
     category: ICategory;
     handleRatingUpdate: (id: string, newRating: number)=> void;
+    isActive: boolean;
 }
 
-const Scorecard = ({category, handleRatingUpdate}:IScorecardProps ) => {
+const Scorecard = ({category, handleRatingUpdate, isActive}:IScorecardProps ) => {
     return (
         <div className={cl['card-container']}>
             <h5>{category.metric}</h5>
             <div className={cl.avg}>
-                <Rating initialRating={category.score}
+                <Rating
                         categoryId={category.id}
                         handleRatingUpdate={handleRatingUpdate}
+                        isActive={isActive}
+                        average={Math.round(category.average)}
                 />
-                <span>{category.average}</span>
+                {!isActive && <span>({category.average})</span>}
             </div>
 
             <h4>{category.description}</h4>

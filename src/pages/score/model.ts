@@ -3,7 +3,7 @@ export interface ICategory{
     id: string;
     metric: string;
     description: string;
-    score: number;
+    score: number[] | never[];
     comments: string;
-    average: number
+    average: number;
 }
