@@ -60,6 +60,7 @@ const Scoreboard = () => {
     const [data, setData] = useState(categories);
     const [ratings, setRatings] = useState(resetRatings);
     const [isActive, setIsActive] = useState(false);
+    const [votes, setVotes] = useState(data[0].score.length);
 
     console.log(data[0], 'DATA')
     console.log(ratings[0], 'ratings')
@@ -85,9 +86,10 @@ const Scoreboard = () => {
 
     const handleSubmit = () => {
         if (isAllMetricsRated) {
-            setRatings(resetRatings())
+            setRatings(resetRatings());
+            setIsActive(false);
+            setVotes(data[0].score.length);
             alert('Thanks for your feedback!');
-            setIsActive(false)
         }
     }
 
@@ -119,6 +121,7 @@ const Scoreboard = () => {
                     )}
 
             </div>
+            votes: {votes}
 
             {isActive
                 ? <Button onClick={handleSubmit} disabled={!isAllMetricsRated}>Submit</Button>
