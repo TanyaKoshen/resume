@@ -8,7 +8,6 @@ import Skills from "../../pages/skills/Skills";
 import Education from "../../pages/education/Education";
 import Experience from "../../pages/experience/Experience";
 import Contact from "../../pages/contact/Contact";
-import LoginForm from "../../pages/login/LoginForm";
 import Scoreboard from "../../pages/score/board/Scoreboard";
 
 const AppRouter = () => {
@@ -32,7 +31,6 @@ const AppRouter = () => {
                     />)}
             </Route>
             <Route path='*' element={<Navigate to='/' />} />
-            <Route  path={'/login'} element={<LoginForm/>}/>
 
         </Routes>
     );
