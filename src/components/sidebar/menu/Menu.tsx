@@ -16,10 +16,21 @@ const menu = [
 
 interface IMenuProps {
     className: string;
+    getLocation: (path: string)=>void;
 }
 
-const Menu = ({className}: IMenuProps) => {
+
+
+const Menu = ({className, getLocation}: IMenuProps) => {
+
+
+
     const [active, setActive] = useState('')
+
+    function handleLinkClick(path: string, name: string){
+        getLocation(path);
+        setActive(name);
+    }
     return (
         <div className={className}>
             <div className={cl['image-container']}>
@@ -28,7 +39,7 @@ const Menu = ({className}: IMenuProps) => {
             <Info/>
             {menu.map(el =>
                 <Link
-                    onClick={() => setActive(el.name)}
+                    onClick={()=>handleLinkClick(el.path, el.name)}
                     className={active === el.name ? `${cl.link} ${cl.active}` : cl.link}
                     to={el.path}
                     key={el.id}>
