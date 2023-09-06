@@ -23,16 +23,6 @@ const Header = () => {
                 </Link>
                 {currentTime.toLocaleTimeString()}
             </div>
-            {/*<div*/}
-            {/*    onClick={()=>setActive('Login')}*/}
-            {/*    className={cl['header-item']}>*/}
-            {/*    Login*/}
-            {/*</div>*/}
-            {/*<div*/}
-            {/*    onClick={()=>setActive('Sign up')}*/}
-            {/*    className={cl['header-item']}>*/}
-            {/*    Sign up*/}
-            {/*</div>*/}
         </div>
     );
 };

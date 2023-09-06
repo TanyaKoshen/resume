@@ -29,7 +29,7 @@
 
 .score-link {
     margin: 30px;
-    padding: 0 50px;
+    padding: 5px 0;
     text-decoration: none;
     cursor: pointer;
     font-size: var(--font-size-sm);
