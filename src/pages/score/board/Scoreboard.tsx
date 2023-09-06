@@ -1,133 +1,129 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {nanoid} from "nanoid";
-import Scorecard from "../card/Scorecard";
 import cl from './Scoreboard.module.css'
 import Button from "../../../shared/UI/buttonMain/Button";
+import {ICategory} from "../model";
+import Modal from "../../../shared/UI/modal/Modal";
+import DataMap from "../DataMap";
+import db from '../../../db/dbConnect';
+// import {getAllScoreData} from "../../../db/queries/getAllScoreData";
+import {categories} from "../../../db/queries/createScoreData";
+import {collection, onSnapshot, query, doc, updateDoc} from "firebase/firestore";
 
-const categories = [
-    {
-        id: nanoid(),
-        metric: 'usability',
-        description: '',
-        score: [0],
-        comments: '',
-        average: 0,
-    },
-    {
-        id: nanoid(),
-        metric: 'visual design',
-        description: '',
-        score: [0],
-        comments: '',
-        average: 0,
-    },
-    {
-        id: nanoid(),
-        metric: 'content',
-        description: '',
-        score: [0],
-        comments: '',
-        average: 0,
-    },
-    {
-        id: nanoid(),
-        metric: 'responsive web design',
-        description: '',
-        score: [0],
-        comments: '',
-        average: 0,
-    },
-    {
-        id: nanoid(),
-        metric: 'browser compatibility',
-        description: '',
-        score: [0],
-        comments: '',
-        average: 0,
-    },
-    {
-        id: nanoid(),
-        metric: 'app performance',
-        description: '',
-        score: [0],
-        comments: '',
-        average: 0,
-    }
-]
+
 
 const Scoreboard = () => {
 
-    const [data, setData] = useState(categories);
-    const [ratings, setRatings] = useState(resetRatings);
+    const [data, setData] = useState<ICategory[]>([]);
+    const [ratings, setRatings] = useState<ICategory[]>([]);
     const [isActive, setIsActive] = useState(false);
-    const [votes, setVotes] = useState(data[0].score.length);
+    const [votes, setVotes] = useState(0);
+    const [modalActive, setModalActive] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
 
-    console.log(data[0], 'DATA')
-    console.log(ratings[0], 'ratings')
-    console.log(isActive, 'isActive')
+    //create init data once;
+    // useEffect(() => {
+    //     createScores();
+    // }, []);
 
-    function resetRatings(){
-        return data.map(el => ({...el, score: [0], average: 0, id: nanoid()}))
+    useEffect(() => {
+        const categoriesColRef = query(collection(db, 'categories'));
+        onSnapshot(categoriesColRef, (snapshot) => {
+            const categoryData = snapshot.docs.map((doc) => doc.data());
+            setData(categoryData[0].categories);
+            setIsLoading(false);
+        });
+    }, []);
+
+
+    function resetRatings(arr: ICategory[]) {
+        return arr.map(el => ({...el, score: [], average: 0, id: nanoid()}))
     }
 
     const avg = (arr: number[]) => {
-        return arr.reduce((a,b)=> a + b )/arr.length;
+        if (arr.length) return arr.reduce((a, b) => a + b) / arr.length;
+        return 0;
     }
-
 
     const handleRatingUpdate = (id: string, newRating: number) => {
-        const updData = ratings.map(category =>
-            category.id === id ? {...category, score: [...category.score, newRating]} : category
-        )
-        setRatings(updData);
-        setData(updData.map(el=>({...el, average: avg(el.score)})));
+        if (ratings) {
+            const updData = ratings.map(category =>
+                category.id === id ? {...category, score: [...category.score, newRating]} : category
+            )
+            setRatings(updData);
+            const newData = updData.map(el => ({...el, average: avg(el.score)}))
+            setData(newData);
+
+            updateDoc(doc(db, 'categories', 'Yd5arqkovud49GfJMZ80'), {newData})
+                .then(r => console.log(r))
+                .catch(err => console.log(err));
+        }
     }
-    const isAllMetricsRated = ratings.every(category => category.score.reduce((a, b) => a + b) !== 0)
+    const isAllMetricsRated = ratings?.every(category => category.score.length !== 0)
 
     const handleSubmit = () => {
         if (isAllMetricsRated) {
-            setRatings(resetRatings());
+            setRatings(resetRatings(data));
             setIsActive(false);
-            setVotes(data[0].score.length);
-            alert('Thanks for your feedback!');
+            setVotes(data[0]?.score?.length);
+            setModalActive(true);
         }
     }
 
     const handleLeaveFeedback = () => {
+        setRatings(resetRatings(data));
         setIsActive(true);
+    }
+
+    useEffect(() => {
+        if (modalActive) {
+            const timeoutId = setTimeout(() => {
+                setModalActive(false)
+            }, 3000);
+            return () => clearInterval(timeoutId);
+        }
+    }, [modalActive]);
+
+    if (isLoading) {
+        return <h3>Loading data...</h3>;
     }
 
     return (
         <div className={cl.scoreboard}>
-            <h4>Your feedback is appreciated!</h4>
-            <div className={cl['board-container']}>
-                {isActive
-                    ? ratings.map(el =>
-                        <div
-                            key={el.id}>
-                            <Scorecard category={el}
-                                       handleRatingUpdate={handleRatingUpdate}
-                                       isActive={isActive}
-                            />
-                        </div>
-                    )
-                    : data.map(el =>
-                        <div
-                            key={el.id}>
-                            <Scorecard category={el}
-                                       handleRatingUpdate={handleRatingUpdate}
-                                       isActive={isActive}/>
-                        </div>
-                    )}
-
-            </div>
-            votes: {votes}
 
             {isActive
-                ? <Button onClick={handleSubmit} disabled={!isAllMetricsRated}>Submit</Button>
-                : <Button onClick={handleLeaveFeedback}>Leave Feedback</Button>}
-        </div>
+                ? <>
+                    <h4>Please rate your experience on each category</h4>
+                    <div className={cl['board-container']}>
+                        <DataMap data={ratings} handleRatingUpdate={handleRatingUpdate} isActive={isActive}/>
+                        <div className={cl['board-btn']}>
+                            <Button onClick={handleSubmit} disabled={!isAllMetricsRated}>Submit</Button>
+                        </div>
+                    </div>
+                </>
+                :
+                <>
+                    <h4>Scoreboard</h4>
+                    <div className={cl['board-container']}>
+                        <DataMap data={data} handleRatingUpdate={handleRatingUpdate} isActive={isActive}/>
+                        votes: {votes}
+                        <div className={cl['board-btn']}>
+                            <Button onClick={handleLeaveFeedback}>Leave Feedback</Button>
+                        </div>
 
+                    </div>
+                </>}
+            <Modal modalActive={modalActive} setModalActive={setModalActive}>
+                <div>
+
+                    <h4>Thank you! </h4>
+                    <h4>Your feedback is appreciated!</h4>
+                    <div className={cl['board-btn']}>
+                        <Button onClick={() => setModalActive(false)}>close</Button>
+                    </div>
+                </div>
+            </Modal>
+        </div>
     );
 };
 

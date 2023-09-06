@@ -18,7 +18,7 @@ const Rating = ({handleRatingUpdate, categoryId, isActive, average}: IRatingProp
         handleRatingUpdate(categoryId, rating);
         setScore(rating)
     };
-    console.log(score);
+
 
     return (
         <div className={cl['rating-container']}>
@@ -32,14 +32,15 @@ const Rating = ({handleRatingUpdate, categoryId, isActive, average}: IRatingProp
                             id={inputId}
                             type="radio"
                             className={cl.inp}
+                            disabled={!isActive}
                             value={isActive ? rating : average}
                             onClick={() => {
                                 isActive &&
                                 handleClick(rating)
                             }}/>
 
-                        <div className={rating > score ? cl.rating : cl['rating-given']}>
-                            <FaStar/>
+                        <div className={`${rating <= score ? cl['rating-given'] : isActive ? cl.rating : 'none'}`}>
+                            <FaStar />
                         </div>
                     </label>
                 )
