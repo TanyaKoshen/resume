@@ -35,7 +35,7 @@ const Layout = () => {
                     </div>
                 )}
                 {isMobile ? (
-                    isSideMenuVisible && <Menu className={`${cl.menu}`} getLocation={getLocation}/>
+                    isSideMenuVisible && <Menu className={`${cl.menu} ${cl['hide-on-small-screen']}`} getLocation={getLocation}/>
                 ) : (
                     <Menu className={`${cl['hamburger-menu.hidden']} ${cl.menu}`} getLocation={getLocation}/>
                 )}
