@@ -22,7 +22,7 @@ const Scorecard = ({category, handleRatingUpdate, isActive}:IScorecardProps ) =>
                         isActive={isActive}
                         average={Math.round(category.average)}
                 />
-                {!isActive && <span>({category.average})</span>}
+                {!isActive && <span>({category.average.toFixed(1)})</span>}
             </div>
 
             <h4>{category.description}</h4>

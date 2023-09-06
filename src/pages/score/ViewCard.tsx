@@ -31,7 +31,7 @@ const ViewCard = (
             <h4>{title}</h4>
             <div className={cl['board-container']}>
                 <DataMap data={data} handleRatingUpdate={handleRatingUpdate} isActive={isActive}/>
-                {!isActive && <h4>votes: {votes}</h4>}
+                {!isActive && <h5>votes: {votes}</h5>}
                 <div className={cl['board-btn']}>
                     <Button onClick={handleSubmit} disabled={!isAllMetricsRated}>{buttonName}</Button>
                 </div>

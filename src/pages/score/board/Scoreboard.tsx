@@ -18,19 +18,20 @@ const Scoreboard = () => {
     const [modalActive, setModalActive] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
 
-    // create init data once;
+    // created data collection in firestore once, run only once;
+
     //  useEffect(() => {
     //      createScores();
     //  }, []);
 
     useEffect(() => {
         const categoriesColRef = query(collection(db, 'categories'));
-        onSnapshot(categoriesColRef, (snapshot) => {const categoryData = snapshot.docs.map((doc) => {doc.data()
-            });
+        onSnapshot(categoriesColRef, (snapshot) => {
+            const categoryData = snapshot.docs.map((doc) => doc.data());
 
-            // setData(categoryData[0].categories);
-            // setVotes(categoryData[0].categories[0].score.length);
-            // setIsLoading(false);
+            setData(categoryData[0].categories);
+            setVotes(categoryData[0].categories[0].score.length);
+            setIsLoading(false);
 
         });
     }, []);
@@ -50,13 +51,15 @@ const Scoreboard = () => {
         setRatings(updData);
     }
 
-    const B = (newData: ICategory[]) => {
+    const updateColl = (newData: ICategory[]) => {
         const docRef = doc(db, 'categories', '5IDF7RUEynndYm2LK5s3');
         updateDoc(docRef, {categories: newData})
             .then(() => console.log('Document updated successfully'))
             .catch(err => console.error('Error updating document:', err));
     }
 
+
+    // validate if all the metrics are given by user
     const isAllMetricsRated = ratings?.every(category => category.score.length !== 0)
 
     const updateDataArray = () => {
@@ -72,8 +75,8 @@ const Scoreboard = () => {
     const handleSubmit = () => {
         if (isAllMetricsRated) {
             setIsActive(false);
-            const A: ICategory[] = updateDataArray();
-            B(A);
+            const newDataArray: ICategory[] = updateDataArray();
+            updateColl(newDataArray);
             setVotes(data[0]?.score?.length);
             setModalActive(true);
         }
@@ -88,7 +91,7 @@ const Scoreboard = () => {
         if (modalActive) {
             const timeoutId = setTimeout(() => {
                 setModalActive(false)
-            }, 3000);
+            }, 2000);
             return () => clearInterval(timeoutId);
         }
     }, [modalActive]);
