@@ -5,8 +5,9 @@ import Button from "../../../shared/UI/buttonMain/Button";
 import {ICategory} from "../model";
 import Modal from "../../../shared/UI/modal/Modal";
 import db from '../../../db/dbConnect';
-import {collection, onSnapshot, query, doc, updateDoc} from "firebase/firestore";
+import {collection, onSnapshot, query, doc, updateDoc, getDocs, where, writeBatch} from "firebase/firestore";
 import ViewCard from "../ViewCard";
+import {createScores} from "../../../db/queries/createScoreData";
 
 
 const Scoreboard = () => {
@@ -20,15 +21,14 @@ const Scoreboard = () => {
 
     // created data collection in firestore once, run only once;
 
-    //  useEffect(() => {
-    //      createScores();
-    //  }, []);
+     // useEffect(() => {
+     //     createScores();
+     // }, []);
 
     useEffect(() => {
         const categoriesColRef = query(collection(db, 'categories'));
         onSnapshot(categoriesColRef, (snapshot) => {
             const categoryData = snapshot.docs.map((doc) => doc.data());
-
             setData(categoryData[0].categories);
             setVotes(categoryData[0].categories[0].score.length);
             setIsLoading(false);
@@ -46,16 +46,29 @@ const Scoreboard = () => {
 
     const handleRatingUpdate = (id: string, newRating: number) => {
         const updData = ratings?.map(category => (
-            category.id === id ? {...category, score: [...category.score, newRating]} : category
+            category.id === id ? {...category, score: [ newRating]} : category
         ));
         setRatings(updData);
     }
 
     const updateColl = (newData: ICategory[]) => {
-        const docRef = doc(db, 'categories', '5IDF7RUEynndYm2LK5s3');
-        updateDoc(docRef, {categories: newData})
+
+        const q = query(collection(db, 'categories'));
+        getDocs(q)
+            .then((querySnapshot) => {
+                    const doc = querySnapshot.docs[0];
+                    const docRef = doc.ref;
+                    updateDoc(docRef, { categories: newData });
+
+            })
             .then(() => console.log('Document updated successfully'))
-            .catch(err => console.error('Error updating document:', err));
+            .catch((err) => console.error('Error updating document:', err));
+
+
+        // const docRef = doc(db, 'categories', '5IDF7RUEynndYm2LK5s3');
+        // updateDoc(docRef, {categories: newData})
+        //     .then(() => console.log('Document updated successfully'))
+        //     .catch(err => console.error('Error updating document:', err));
     }
 
 

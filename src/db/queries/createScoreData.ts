@@ -54,10 +54,19 @@ export const categories: ICategory[] = [
     }
 ]
 
-export function createScores(){
-    const refDoc = collection(db, 'categories');
-    addDoc(refDoc, {
-        categories
-    }).then(res => console.log(res, 'response'))
-        .catch(err => console.log(err));
+
+export async function createScores() {
+    const categoriesRef = collection(db, 'categories');
+
+    try {
+        const docRef = await addDoc(categoriesRef, {
+            categories
+        });
+
+        return docRef.id;;
+
+    } catch (error) {
+        console.error('Error creating document:', error);
+    }
 }
+
