@@ -9,6 +9,7 @@ interface IDAtaMapProps {
 }
 
 const DataMap = ({data, handleRatingUpdate, isActive}: IDAtaMapProps) => {
+
     return (
         <>
             {data?.map(el => (
