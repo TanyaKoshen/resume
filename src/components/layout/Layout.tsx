@@ -10,7 +10,7 @@ import useResponsive from "../../shared/hooks/useResponsive";
 
 const Layout = () => {
     const [isMobile ] = useResponsive();
-    const [isSideMenuVisible, setIsSideMenuVisible] = useState(!isMobile);
+    const [isSideMenuVisible, setIsSideMenuVisible] = useState(false);
 
     const toggleSideMenu = () => {
         setIsSideMenuVisible(!isSideMenuVisible);

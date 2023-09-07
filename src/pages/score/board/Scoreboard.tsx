@@ -24,10 +24,10 @@ const Scoreboard = () => {
      //     createScores();
      // }, []);
 
-    useEffect(() => {
+    useEffect( () => {
         const categoriesColRef = query(collection(db, 'categories'));
         onSnapshot(categoriesColRef, (snapshot) => {
-            const categoryData = snapshot.docs.map((doc) => doc.data());
+            const categoryData =  snapshot.docs.map((doc) => doc.data());
             setData(categoryData[0].categories);
             setVotes(categoryData[0].categories[0].score.length);
             setIsLoading(false);

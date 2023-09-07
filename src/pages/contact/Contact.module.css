@@ -2,6 +2,8 @@
     display: flex;
     flex-direction: column;
     padding: 30px 50px;
+    flex-grow:1;
+
 }
 
 .contact{
@@ -21,6 +23,7 @@
     border-radius: 50%;
     border: 1px solid var(--bg-color-sidebar);
     box-shadow: -1px 3px 6px rgba(0, 0, 0, 0.3);
+    flex-shrink: 0;
 }
 .icon{
     width: 50px;
