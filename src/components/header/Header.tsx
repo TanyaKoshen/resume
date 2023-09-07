@@ -22,7 +22,7 @@ const Header = () => {
 
     const link = 'https://github.com/TanyaKoshen/resume/tree/master/src/pages/'
     const href = pagePathName === 'home' ?  "https://github.com/TanyaKoshen/resume" : link+pagePathName;
-const gitLinkName = !isMobile? `GitHub to ${pagePathName} page` : pagePathName
+    const gitLinkName = !isMobile? `GitHub ${pagePathName} page` : pagePathName
     return (
         <div className={cl['header-container']}>
             <div className={cl['git-hub-link']}>
