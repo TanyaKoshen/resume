@@ -42,7 +42,6 @@
     border-bottom: 1px solid var(--link-font-color);
 }
 
-
 .git-hub-link a{
     color: var(--bg-color);
     padding: 5px 0;
@@ -51,4 +50,3 @@
     color: var(--bg-color);
     padding: 5px 0;
 }
-

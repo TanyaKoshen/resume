@@ -3,7 +3,6 @@ import DownLoad from "../../shared/UI/button/DownLoad";
 import cl from './Home.module.css'
 import {BsDownload} from "react-icons/bs";
 import myResume from '../../shared/assets/TatianaPeretyatkoResume.pdf'
-import { AiFillGithub } from 'react-icons/ai';
 
 const Home = () => {
 
