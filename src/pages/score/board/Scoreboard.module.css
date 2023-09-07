@@ -1,11 +1,10 @@
+
 .scoreboard{
     display: flex;
     flex-direction: column;
     margin: 50px;
     text-align: center;
     align-items: center;
-
-
 }
 
 .board-container{

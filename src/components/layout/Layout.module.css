@@ -18,7 +18,7 @@
 }
 
 .menu.mobile{
-    z-index:1;
+    /*z-index:1;*/
     position: absolute;
     top: calc(var(--header-height));
     left: 0;
@@ -37,13 +37,6 @@
     overflow-y: scroll;
 }
 
-/*.outlet.mobile-menu-open{*/
-/*    position: absolute;*/
-/*    top: calc(var(--header-height));*/
-/*    left: 0;*/
-/*    min-height: calc(100vh - var(--header-height));*/
-/*}*/
-
 .hamburger-menu{
     width: 30px;
     height: 30px;
@@ -54,9 +47,6 @@
     z-index: 2
 }
 
-.hamburger-menu.hidden{
-    display: none;
-}
 
 
 

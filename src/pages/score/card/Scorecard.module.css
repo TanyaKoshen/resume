@@ -17,5 +17,17 @@
 
 }
 
+.score-grid{
+    display: grid;
+    grid-template-columns: 40% 30% auto;
+    justify-items: start;
+    align-items: center;
+    gap: 25px 20px ;
+
+    & h5{
+        text-align: start;
+    }
+}
+
 
 

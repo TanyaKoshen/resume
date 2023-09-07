@@ -115,7 +115,6 @@ const Scoreboard = () => {
 
     return (
         <div className={cl.scoreboard}>
-
             {isActive
                 ?
                 <ViewCard

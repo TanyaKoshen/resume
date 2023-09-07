@@ -13,7 +13,8 @@ interface IScorecardProps{
 const Scorecard = ({category, handleRatingUpdate, isActive}:IScorecardProps ) => {
 
     return (
-        <div className={cl['card-container']}>
+        // <div className={cl['card-container']}>
+            <div className={cl['score-grid']}>
             <h5>{category.metric}</h5>
             <div className={cl.avg}>
                 <Rating
@@ -22,9 +23,8 @@ const Scorecard = ({category, handleRatingUpdate, isActive}:IScorecardProps ) =>
                         isActive={isActive}
                         average={Math.round(category.average)}
                 />
-                {!isActive && <span>({category.average.toFixed(1)})</span>}
             </div>
-
+                {!isActive && <span>({category.average.toFixed(1)})</span>}
             <h4>{category.description}</h4>
             <div>{category.comments}</div>
         </div>

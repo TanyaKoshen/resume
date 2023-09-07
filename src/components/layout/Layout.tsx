@@ -10,7 +10,7 @@ import useResponsive from "../../shared/hooks/useResponsive";
 
 const Layout = () => {
     const [isMobile, isTablet] = useResponsive();
-    const [isSideMenuVisible, setIsSideMenuVisible] = useState(false);
+    const [isSideMenuVisible, setIsSideMenuVisible] = useState(!isMobile);
 
     const toggleSideMenu = () => {
         setIsSideMenuVisible(!isSideMenuVisible);
@@ -25,6 +25,9 @@ const Layout = () => {
         toggleSideMenu()
     }
 
+    console.log(isMobile, 'isMobile')
+    console.log(isSideMenuVisible, 'isSideMenuVisible')
+
     return (
         <div>
             <Header />
@@ -34,10 +37,10 @@ const Layout = () => {
                         <GiHamburgerMenu className={cl['hamburger-menu']} />
                     </div>
                 )}
-                {isMobile ? (
-                    isSideMenuVisible && <Menu className={`${cl.menu} ${cl['hide-on-small-screen']}`} getLocation={getLocation}/>
+                {isMobile && !isSideMenuVisible? (
+                     <Menu className={`${cl.menu} ${cl['hide-on-small-screen']}` } getLocation={getLocation}/>
                 ) : (
-                    <Menu className={`${cl['hamburger-menu.hidden']} ${cl.menu}`} getLocation={getLocation}/>
+                    <Menu className={`${cl['menu.mobile']} ${cl.menu}`} getLocation={getLocation}/>
                 )}
                 <div
                     className={
@@ -46,7 +49,8 @@ const Layout = () => {
                             : cl.outlet
                     }
                 >
-                    <Outlet />
+                        <Outlet />
+
                 </div>
             </div>
         </div>
