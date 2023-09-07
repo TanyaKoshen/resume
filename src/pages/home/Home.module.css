@@ -1,6 +1,6 @@
 .home{
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     background-image: url("../../shared/assets/img.png");
     background-size: cover;
     background-position: center;
