@@ -1,6 +1,6 @@
 import {nanoid} from "nanoid";
 import {ICategory} from "../../pages/score/model";
-import {collection, addDoc, setDoc} from "firebase/firestore";
+import {collection, addDoc} from "firebase/firestore";
 import db from "../dbConnect";
 
 export const categories: ICategory[] = [
