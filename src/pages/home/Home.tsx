@@ -3,6 +3,7 @@ import DownLoad from "../../shared/UI/button/DownLoad";
 import cl from './Home.module.css'
 import {BsDownload} from "react-icons/bs";
 import myResume from '../../shared/assets/TatianaPeretyatkoResume.pdf'
+import { AiFillGithub } from 'react-icons/ai';
 
 const Home = () => {
 
@@ -16,13 +17,13 @@ const Home = () => {
 
     return (
         <div className={cl.home}>
+
             <div className={cl['btn-link-container']}>
                 <div>
                     <DownLoad onClick={handleDownloadClick}>
                         <BsDownload/>{' '}Download CV
                     </DownLoad>
                 </div>
-
                 <a className={cl['a-link']}
                    ref={downloadLinkRef}
                    href={myResume}

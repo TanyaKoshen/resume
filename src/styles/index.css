@@ -42,7 +42,7 @@ h4{
 }
 
 h5{
-  padding: 0 20px;
+  padding: 0 50px;
   font-size: var(--font-size-sm) ;
   color: var(--font-color);
 
@@ -63,5 +63,6 @@ span{
   color: var(--font-color);
   font-size: var(--font-size-sm);
 }
+
 
 

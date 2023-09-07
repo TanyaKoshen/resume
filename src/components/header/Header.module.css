@@ -1,6 +1,6 @@
 .header-container{
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
     align-items: center;
     height: var(--header-height);
     background: var(--bg-header);
@@ -27,15 +27,28 @@
     font-size: var(--font-size-sm);
 }
 
-.score-link {
+.score-link, .git-hub-link {
+    display: flex;
     margin: 30px;
     padding: 5px 0;
     text-decoration: none;
     cursor: pointer;
     font-size: var(--font-size-sm);
     color: var(--bg-color);
+    gap: 10px
 }
 
 .header-item:hover{
     border-bottom: 1px solid var(--link-font-color);
 }
+
+
+.git-hub-link a{
+    color: var(--bg-color);
+    padding: 5px 0;
+}
+.git-hub-link span{
+    color: var(--bg-color);
+    padding: 5px 0;
+}
+

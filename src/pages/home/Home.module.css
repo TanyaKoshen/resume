@@ -1,19 +1,24 @@
 .home{
     display: flex;
+    align-items: start;
     background-image: url("../../shared/assets/img.png");
     background-size: cover;
     background-position: center;
     width: 100%;
     height: calc(100vh - var(--header-height));
+    flex-grow:1
 }
 
 .btn-link-container{
-    padding: 30px
+    padding: 60px 30px;
+    display:flex;
+
 }
 
 .a-link {
     display: none;
     cursor: pointer;
 }
+
 
 
