@@ -14,7 +14,6 @@ const About = () => {
                 Outside of work, I'm all about exploring new places, delving into history, embarking on road trips with my family, hiking in the great outdoors, and sharing a jog with my loyal canine companion.
 
                 I'm always open to exciting opportunities and new challenges. Let's connect and create something amazing together!
-
             </p>
         </div>
     );
