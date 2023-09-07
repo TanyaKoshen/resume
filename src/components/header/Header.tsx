@@ -3,7 +3,6 @@ import cl from './Header.module.css'
 import {Link} from "react-router-dom";
 
 const Header = () => {
-    const [active, setActive] = useState('')
 
     const [currentTime, setCurrentTime] = useState(new Date());
 

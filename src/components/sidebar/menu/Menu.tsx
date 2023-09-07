@@ -34,7 +34,7 @@ const Menu = ({className, getLocation}: IMenuProps) => {
     return (
         <div className={className}>
             <div className={cl['image-container']}>
-                <img className={cl.image} src={profilePic} alt="profile picture"/>
+                <img className={cl.image} src={profilePic} alt='Profile Pic'/>
             </div>
             <Info/>
             {menu.map(el =>

@@ -5,9 +5,8 @@ import Button from "../../../shared/UI/buttonMain/Button";
 import {ICategory} from "../model";
 import Modal from "../../../shared/UI/modal/Modal";
 import db from '../../../db/dbConnect';
-import {collection, onSnapshot, query, doc, updateDoc, getDocs, where, writeBatch} from "firebase/firestore";
+import {collection, onSnapshot, query, updateDoc, getDocs} from "firebase/firestore";
 import ViewCard from "../ViewCard";
-import {createScores} from "../../../db/queries/createScoreData";
 
 
 const Scoreboard = () => {

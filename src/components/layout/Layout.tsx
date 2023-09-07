@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useState} from 'react';
 import {Outlet} from 'react-router-dom';
 import Menu from "../sidebar/menu/Menu";
 import cl from './Layout.module.css'
@@ -9,7 +9,7 @@ import useResponsive from "../../shared/hooks/useResponsive";
 
 
 const Layout = () => {
-    const [isMobile, isTablet] = useResponsive();
+    const [isMobile ] = useResponsive();
     const [isSideMenuVisible, setIsSideMenuVisible] = useState(!isMobile);
 
     const toggleSideMenu = () => {

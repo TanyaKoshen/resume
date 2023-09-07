@@ -27,7 +27,8 @@ const Home = () => {
                    ref={downloadLinkRef}
                    href={myResume}
                    download="TatianaPeretyatkoResume.pdf"
-                ></a>
+                   style={{visibility: 'hidden'}}
+                >Download TatianaPeretyatkoResume.pdf</a>
             </div>
 
         </div>
