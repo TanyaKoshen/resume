@@ -2,30 +2,24 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    margin: 10px 50px;
+    margin: 0 50px;
     height: 50px;
     border: 1px solid var(--bg-color-sidebar);
     border-radius: 10px;
     flex-shrink: 0;
 }
 
-.avg{
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 10px;
-
-}
 
 .score-grid{
     display: grid;
-    grid-template-columns: 40% 30% auto;
+    grid-template-columns: 60% 30% auto;
     justify-items: start;
     align-items: center;
     gap: 25px 20px ;
 
     & h5{
         text-align: start;
+        padding: 0px;
     }
 }
 
