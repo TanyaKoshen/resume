@@ -128,7 +128,7 @@ In this project, scripts are located in the package.json file
 
 # Deployment and Hosting Strategy
    The application is deployed and hosted on Netlify using a simplified Continuous Integration and Continuous Deployment (CI/CD) approach.
-   The link: https://master--fluffy-daffodil-c62d23.netlify.app/
+   The link: https://fluffy-daffodil-c62d23.netlify.app/
 ## Continuous Deployment (CD):
    The CD process is set up to automate the deployment of the application whenever changes are pushed to the master branch in the GitHub repository, ensuring that users always have access to the most up-to-date version of the application.
 ## Deployment Workflow:
