@@ -18,6 +18,9 @@
     --header-height: 50px;
     --sidebar-width: 320px;
     --bg-header: #413a3a;
+    --box-shadow-inset: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    --box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
+;
 
 
 }

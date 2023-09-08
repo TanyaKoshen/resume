@@ -27,7 +27,7 @@ const Rating = ({handleRatingUpdate, categoryId, isActive, average}: IRatingProp
                 const inputId = rating + categoryId;
 
                 return (
-                    <label htmlFor={inputId} key={i}>
+                    <label htmlFor={inputId} key={i} data-testid='label'>
                         <input
                             id={inputId}
                             type="radio"
@@ -38,7 +38,6 @@ const Rating = ({handleRatingUpdate, categoryId, isActive, average}: IRatingProp
                                 isActive &&
                                 handleClick(rating)
                             }}/>
-
                         <div className={`${rating <= score ? cl['rating-given'] : isActive ? cl.rating : 'none'}`}>
                             <FaStar />
                         </div>
