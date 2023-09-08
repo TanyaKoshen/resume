@@ -20,5 +20,11 @@
     cursor: pointer;
 }
 
+.moto{
+    position: absolute;
+    right: 40px;
+    top: 90px;
+}
+
 
 

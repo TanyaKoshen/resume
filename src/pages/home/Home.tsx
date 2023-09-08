@@ -30,6 +30,9 @@ const Home = () => {
                    style={{visibility: 'hidden'}}
                 >Download TatianaPeretyatkoResume.pdf</a>
             </div>
+            <div className={cl.moto}>
+                <h3 ><i>Innovate. Code. Create</i></h3>
+            </div>
 
         </div>
     );
