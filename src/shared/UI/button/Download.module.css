@@ -2,12 +2,13 @@
     padding: 10px;
     border: 1px solid var(--font-color);
     border-radius: 5px;
-    color: var(--font-color);
+    color: black;
     font-size: var(--font-size-sm);
-    background: transparent;
+    background: white;
     cursor: pointer;
     text-transform: uppercase;
     min-width: 160px;
+    z-index:2;
 }
 
 .btn:hover{

@@ -18,6 +18,6 @@ function useMediaQuery(query: string) {
 
 export default function useResponsive() {
     const isMobile = useMediaQuery("(max-width: 600px)");
-  // const isTablet = useMediaQuery("(min-width: 601px) and (max-width: 960px)");
-    return [isMobile];
+    const isTablet = useMediaQuery("(min-width: 601px) and (max-width: 960px)");
+    return [isMobile, isTablet ];
 }

@@ -3,9 +3,9 @@ import DownLoad from "../../shared/UI/button/DownLoad";
 import cl from './Home.module.css'
 import {BsDownload} from "react-icons/bs";
 import myResume from '../../shared/assets/TatianaPeretyatkoResume.pdf'
-
+import useResponsive from "../../shared/hooks/useResponsive";
 const Home = () => {
-
+const [isMobile, isTablet] = useResponsive();
     const downloadLinkRef = useRef<HTMLAnchorElement | null>(null)
 
     const handleDownloadClick = () => {
@@ -30,9 +30,9 @@ const Home = () => {
                    style={{visibility: 'hidden'}}
                 >Download TatianaPeretyatkoResume.pdf</a>
             </div>
-            <div className={cl.moto}>
-                <h3 ><i>Innovate. Code. Create</i></h3>
-            </div>
+            {(!isTablet && !isMobile) && <div className={cl.moto}>
+                <h3><i>Innovate. Code. Create</i></h3>
+            </div>}
 
         </div>
     );
