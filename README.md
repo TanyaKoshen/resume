@@ -29,7 +29,7 @@ In this project, scripts are located in the package.json file
 #### `npm start`: Starts the development server on port 3000
 #### `npm run build`: Optimizes and bundles the code for deployment, making it suitable for production use.
 #### `npm run test`: Executes test cases and obtains test results
-#### `lint`: Runs ESLint, checks and enforces code style and quality rules. It focuses on *.ts and *.tsx files. If possible, it will automatically fix fixable issues.
+#### `npm run lint`: Runs ESLint, checks and enforces code style and quality rules. It focuses on *.ts and *.tsx files. If possible, it will automatically fix fixable issues.
 
 # Project Structure
 ## Directory Structure
