@@ -3,15 +3,15 @@
 The "Resume" project is a single-page web application developed using React, TypeScript, and pure CSS. It functions as a resume, enabling users to discover information about the creator (Tatiana Peretyatko), delve into the creator's skills and experiences, and provide feedback on the website.
 
 ## Technologies Used
-React
-TypeScript
-CSS, CSS Modules
-Figma
-React Router DOM
-Firebase Firestore (for data storage)
-React Testing Library
-GitHub Actions (CI)
-Netlify (CD)
+#### -React
+#### -TypeScript
+#### -CSS, CSS Modules
+#### -Figma
+#### -React Router DOM
+#### -Firebase Firestore (for data storage)
+#### -React Testing Library
+#### -GitHub Actions (CI)
+#### -Netlify (CD)
 
 # Getting Started
 ## Installation
