@@ -9,7 +9,7 @@ import {act} from "react-dom/test-utils";
 const mockRatingProps = {
     handleRatingUpdate: jest.fn(),
     categoryId: '1234klhlh',
-    average: 5
+    average: 3.5,
 }
 
 
@@ -40,10 +40,11 @@ describe('Rating', () => {
             const sibling = el.nextSibling;
             expect(sibling).toHaveClass('rating-given');
         })
+
     })
 
     it(`click doesn't work when active is false`, ()=>{
-        renderRatingComponent(false);
+        renderRatingComponent();
         const input = screen.getAllByRole('radio')
         input.forEach((el, i) => {
             expect(el).toHaveAttribute('disabled');
@@ -52,5 +53,8 @@ describe('Rating', () => {
             });
             expect(mockRatingProps.handleRatingUpdate).toHaveBeenCalledTimes(0);
         })
+        const stars = document.querySelectorAll('.rating-given');
+        expect(stars.length).toBe(3); // Assuming an average rating of 3.5 should display 3 stars
     })
+
 })
