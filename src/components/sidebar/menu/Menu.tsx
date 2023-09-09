@@ -11,7 +11,8 @@ const menu = [
     {path: 'skills', id: nanoid(), name: 'Skills'},
     {path: 'experience', id: nanoid(), name: 'Experience'},
     {path: 'education', id: nanoid(), name: 'Education'},
-    {path: 'contact', id: nanoid(), name: 'Contact'}
+    {path: 'contact', id: nanoid(), name: 'Contact'},
+    {path: 'create', id: nanoid(), name: 'Create your resume'},
 ]
 
 interface IMenuProps {
@@ -22,8 +23,6 @@ interface IMenuProps {
 
 
 const Menu = ({className, getLocation}: IMenuProps) => {
-
-
 
     const [active, setActive] = useState('')
 
