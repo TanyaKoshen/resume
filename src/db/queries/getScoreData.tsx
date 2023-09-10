@@ -1,11 +1,6 @@
 import {collection, onSnapshot, query} from "firebase/firestore";
 import db from "../dbConnect";
 
-interface IGetScore{
-    setData: ()=>void;
-    setVotes: ()=>void;
-    setIsLoading: ()=>void;
-}
 
 export const getScoreData = (
     setData: Function,
