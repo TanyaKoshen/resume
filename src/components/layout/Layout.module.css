@@ -13,8 +13,10 @@
     text-transform: uppercase;
     color: var(--bg-color-sidebar);
     box-shadow:var(--box-shadow );
-    transform: translateX(0);
+    transform: translateX(0%);
+    transition: 0.2s all;
     min-height: calc(100vh - var(--header-height));
+    z-index: 1;
 }
 
 .menu.mobile{
@@ -26,15 +28,25 @@
 
 .menu.hide-on-small-screen {
     transform: translateX(-100%);
-    display: none;
+    transition: 0.2s all;
+    opacity: 0;
+    /*display: none;*/
 }
 
-.outlet {
+.outlet-container {
     flex-grow: 1;
     text-transform: uppercase;
     color: var(--bg-color-sidebar);
     min-height: calc(100vh - var(--header-height));
     overflow-y: scroll;
+
+}
+
+.outlet-container.mobile{
+    position: absolute;
+    left: 0;
+    top: var(--header-height);
+    width: 100vw;
 }
 
 .hamburger-menu{
@@ -44,7 +56,7 @@
     position: absolute;
     top: calc(var(--header-height));
     left: 0;
-    z-index: 2
+    z-index: 2;
 }
 
 

@@ -16,17 +16,14 @@ const Layout = () => {
         setIsSideMenuVisible(!isSideMenuVisible);
     }
 
-    const [currentLocation, setCurrentLocation] = useState(window.location.pathname)
+    const [_currentLocation , setCurrentLocation] = useState(window.location.pathname)
 
 
     const getLocation = (path:string)=>{
-        console.log(path)
         setCurrentLocation(path);
         toggleSideMenu()
     }
 
-    console.log(isMobile, 'isMobile')
-    console.log(isSideMenuVisible, 'isSideMenuVisible')
 
     return (
         <div>
@@ -38,9 +35,12 @@ const Layout = () => {
                     </div>
                 )}
                 {isMobile && !isSideMenuVisible? (
-                     <Menu className={`${cl.menu} ${cl['hide-on-small-screen']}` } getLocation={getLocation}/>
+                     <Menu className={`${cl.menu} ${cl['hide-on-small-screen']}` }
+                           getLocation={getLocation}/>
                 ) : (
-                    <Menu className={`${cl['menu.mobile']} ${cl.menu}`} getLocation={getLocation}/>
+                    <Menu
+                        className={`${cl['menu.mobile']} ${cl.menu}`}
+                        getLocation={getLocation}/>
                 )}
                 <div
                     className={
@@ -49,7 +49,14 @@ const Layout = () => {
                             : cl.outlet
                     }
                 >
+                    <div className={
+                        !isMobile ?
+                        cl['outlet-container']
+                            : `${cl.mobile} ${cl['outlet-container']}`
+                    }>
                         <Outlet />
+                    </div>
+
 
                 </div>
             </div>

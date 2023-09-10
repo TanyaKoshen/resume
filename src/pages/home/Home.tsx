@@ -15,7 +15,7 @@ const [isMobile, isTablet] = useResponsive();
     };
 
     return (
-        <div className={cl.home}>
+        <div className={!isMobile? cl.home: `${cl.home} ${cl.mobile}`}>
 
             <div className={cl['btn-link-container']}>
                 <div>

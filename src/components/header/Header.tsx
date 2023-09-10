@@ -39,7 +39,7 @@ const Header = () => {
                       className={cl['score-link']}>
                     Scoreboard
                 </Link>
-                {currentTime.toLocaleTimeString()}
+                {!isMobile && currentTime.toLocaleTimeString()}
             </div>
         </div>
     );

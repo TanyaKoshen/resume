@@ -4,11 +4,13 @@
     background-image: url("../../shared/assets/img.png");
     background-size: cover;
     background-position: center;
-    width: 100%;
+    width: calc(100vw - var(--sidebar-width));
     height: calc(100vh - var(--header-height));
     flex-grow:1
 }
-
+.home.mobile{
+    width: 100vw;
+}
 .btn-link-container{
     padding: 60px 30px;
     display:flex;
