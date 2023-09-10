@@ -4,10 +4,9 @@ import cl from './Scoreboard.module.css'
 import Button from "../../../shared/UI/buttonMain/Button";
 import {ICategory} from "../model";
 import Modal from "../../../shared/UI/modal/Modal";
-import db from '../../../db/dbConnect';
-import {collection, onSnapshot, query, updateDoc, getDocs} from "firebase/firestore";
 import ViewCard from "../ViewCard";
-
+import {getScoreData} from "../../../db/queries/getScoreData";
+import {updateScoreData} from "../../../db/queries/updateScoreData";
 
 const Scoreboard = () => {
 
@@ -25,14 +24,7 @@ const Scoreboard = () => {
      // }, []);
 
     useEffect( () => {
-        const categoriesColRef = query(collection(db, 'categories'));
-        onSnapshot(categoriesColRef, (snapshot) => {
-            const categoryData =  snapshot.docs.map((doc) => doc.data());
-            setData(categoryData[0].categories);
-            setVotes(categoryData[0].categories[0].score.length);
-            setIsLoading(false);
-
-        });
+        getScoreData(setData, setVotes, setIsLoading)
     }, []);
 
     function resetRatings(arr: ICategory[]) {
@@ -49,27 +41,6 @@ const Scoreboard = () => {
         ));
         setRatings(updData);
     }
-
-    const updateColl = (newData: ICategory[]) => {
-
-        const q = query(collection(db, 'categories'));
-        getDocs(q)
-            .then((querySnapshot) => {
-                    const doc = querySnapshot.docs[0];
-                    const docRef = doc.ref;
-                    updateDoc(docRef, { categories: newData });
-
-            })
-            .then(() => console.log('Document updated successfully'))
-            .catch((err) => console.error('Error updating document:', err));
-
-
-        // const docRef = doc(db, 'categories', '5IDF7RUEynndYm2LK5s3');
-        // updateDoc(docRef, {categories: newData})
-        //     .then(() => console.log('Document updated successfully'))
-        //     .catch(err => console.error('Error updating document:', err));
-    }
-
 
     // validate if all the metrics are given by user
     const isAllMetricsRated = ratings?.every(category => category.score.length !== 0)
@@ -88,7 +59,7 @@ const Scoreboard = () => {
         if (isAllMetricsRated) {
             setIsActive(false);
             const newDataArray: ICategory[] = updateDataArray();
-            updateColl(newDataArray);
+            updateScoreData(newDataArray);
             setVotes(data[0]?.score?.length);
             setModalActive(true);
         }
