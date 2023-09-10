@@ -1,0 +1,22 @@
+.form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20%;
+    gap: 30px
+}
+
+input{
+    height: 30px;
+    width: 270px;
+    background: var(--bg-color);
+    border:none;
+    border-bottom : 1px solid var(--font-color-sidebar);
+
+}
+
+
+.form-name{
+    display: flex;
+    justify-content: center;
+}

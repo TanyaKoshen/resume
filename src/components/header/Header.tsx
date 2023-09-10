@@ -4,8 +4,6 @@ import {Link} from "react-router-dom";
 import {AiFillGithub} from "react-icons/ai";
 import useResponsive from "../../shared/hooks/useResponsive";
 
-
-
 const Header = () => {
     const [isMobile ] = useResponsive();
     const [currentTime, setCurrentTime] = useState(new Date());
@@ -16,7 +14,6 @@ const Header = () => {
         }, 1000);
         return () => clearInterval(intevalId);
     }, []);
-
 
     const pagePathName = window.location.pathname === '/' ? 'home' : window.location.pathname.slice(1);
 
