@@ -13,13 +13,12 @@
 .score-grid{
     display: grid;
     grid-template-columns: 60% 30% auto;
-    justify-items: start;
-    align-items: center;
-    gap: 25px 20px ;
+    justify-items: flex-start;
+    gap: 25px 10px ;
 
     & h5{
         text-align: start;
-        padding: 0px;
+        padding: 0;
     }
 }
 

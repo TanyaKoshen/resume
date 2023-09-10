@@ -13,10 +13,9 @@ interface IScorecardProps {
 const Scorecard = ({category, handleRatingUpdate, isActive}: IScorecardProps) => {
 
     return (
-        // <div className={cl['card-container']}>
         <div className={cl['score-grid']}>
             <h5>{category.metric}</h5>
-            <div className={cl.avg}>
+            <div>
                 <Rating
                     categoryId={category.id}
                     handleRatingUpdate={handleRatingUpdate}
