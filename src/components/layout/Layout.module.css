@@ -15,7 +15,7 @@
     box-shadow:var(--box-shadow );
     transform: translateX(0%);
     transition: 0.2s all;
-    min-height: calc(100vh - var(--header-height));
+    min-height: 100rem;
     z-index: 1;
 }
 
