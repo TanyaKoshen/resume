@@ -39,14 +39,14 @@ const Layout = () => {
                            getLocation={getLocation}/>
                 ) : (
                     <Menu
-                        className={`${cl['menu.mobile']} ${cl.menu}`}
+                        className={`${cl.menu} ${cl['menu.mobile']}`}
                         getLocation={getLocation}/>
                 )}
                 <div
                     className={
                         isMobile && isSideMenuVisible
-                            ? `${cl['mobile-menu-open']} ${cl.outlet}`
-                            : cl.outlet
+                            ? `${cl['mobile']} ${cl['outlet-container']}`
+                            : cl['outlet-container']
                     }
                 >
                     <div className={
