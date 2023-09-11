@@ -5,10 +5,18 @@ import {AiFillGithub} from "react-icons/ai";
 import useResponsive from "../../shared/hooks/useResponsive";
 
 
-
-const Header = () => {
+interface IHeaderProps{
+ getLocation: (path: string)=>void;
+}
+const Header = ({getLocation}: IHeaderProps) => {
     const [isMobile ] = useResponsive();
     const [currentTime, setCurrentTime] = useState(new Date());
+    const [_active, setActive] = useState('')
+
+    function handleLinkClick(path: string, name: string){
+        getLocation(path);
+        setActive(name);
+    }
 
     useEffect(() => {
         const intevalId = setInterval(() => {
@@ -36,10 +44,13 @@ const Header = () => {
             </div>
             <div className={cl.header}>
                 <Link to={'score'}
-                      className={cl['score-link']}>
+                      className={cl['score-link']}
+                      onClick={()=>handleLinkClick(`/${pagePathName}`, 'score')}
+                >
                     Scoreboard
                 </Link>
                 {!isMobile && currentTime.toLocaleTimeString()}
+
             </div>
         </div>
     );

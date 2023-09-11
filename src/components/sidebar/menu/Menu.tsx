@@ -19,11 +19,7 @@ interface IMenuProps {
     getLocation: (path: string)=>void;
 }
 
-
-
 const Menu = ({className, getLocation}: IMenuProps) => {
-
-
 
     const [active, setActive] = useState('')
 

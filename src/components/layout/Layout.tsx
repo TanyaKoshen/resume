@@ -27,7 +27,7 @@ const Layout = () => {
 
     return (
         <div>
-            <Header />
+            <Header getLocation={getLocation}/>
             <div className={cl.layout}>
                 {isMobile && (
                     <div onClick={toggleSideMenu}>
